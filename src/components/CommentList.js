@@ -2,15 +2,24 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const CommentList = props => {
-  if (!props.comments.length) {
-    return <div>No comments</div>;
-  }
+  const renderComments = () => {
+    if (!props.comments.length) {
+      return <div>No comments</div>;
+    }
+    return (
+      <ul>
+        {props.comments.map(comment => (
+          <li key={comment}>{comment}</li>
+        ))}
+      </ul>
+    );
+  };
+
   return (
-    <ul>
-      {props.comments.map(comment => (
-        <li key={comment}>{comment}</li>
-      ))}
-    </ul>
+    <div>
+      <h4>Comment List</h4>
+      {renderComments()}
+    </div>
   );
 };
 

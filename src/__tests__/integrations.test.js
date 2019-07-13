@@ -6,7 +6,6 @@ import App from 'components/App';
 
 let wrapper;
 
-// Attempt to render entire app
 beforeEach(() => {
   wrapper = mount(
     <Root>
